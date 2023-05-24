@@ -155,3 +155,20 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+.float-parent-element { 
+  width: 50%; 
+} 
+.float-child-element { 
+  float: left; 
+  width: 50%; 
+} 
+.red { 
+
+  margin-left: 50%; 
+  height: 100px; 
+} 
+.yellow { 
+  margin-left: 50%; 
+  height: 100px; 
+}

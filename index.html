@@ -23,6 +23,8 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  
 </head>
 <body>
 
@@ -155,6 +157,57 @@
           </div>
         <br/>
         <!--/ BRDF. -->
+
+
+
+        <!-- Geometry-->
+        <h3 class="title is-4">Interpolatory Shape Reconstruction</h3>
+        <div class="content has-text-justified">
+          <b>Exact Normal Constraints</b>
+          <p>
+            CNF can be used to produces plausible implicit surfaces from point clouds, with the advantage of not depending on manufactured
+            offset points to ensure the existence of a non-trivial implicit surface. As the surface is parameterized by a neural field, it can be
+            further traiend to satisfy addition constraints, like conforming to the Eikonal equation.
+          </p>
+        </div>
+          <div class="column has-text-centered">
+            <img src="./static/images/exact_normal_geom.svg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+          </div>
+        
+          <b>Large-scale Constraints</b>
+          <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+          <br>
+          Central to our approach is the construction and inversion of a linear system, the size of which grows quadratically with the number of constraint points.
+          We demonstrate that our approach can be scaled to larger problems by limiting the <i>support</i> of each constraint point to a local region, thus making the linear system sparse; this allows us to evaluate the field 
+          for large number of constraints, which we demonstrate by reconstruction of points clouds with 10k points.
+          <table style="width: 100%", border="0" cellpadding="0" cellspacing="0">
+            <tr>
+               <td><model-viewer alt="" src="./static/images/max.glb" shadow-intensity="1" orientation="90deg 0 290deg"  camera-controls touch-action="pan-z" style="width:100%;height:500px"></model-viewer></td>
+               <td><model-viewer alt="" src="./static/images/horse.glb" shadow-intensity="1" orientation="0deg 0 -50deg" camera-orbit="20deg 0 5m" camera-controls touch-action="pan-z" style="width:100%;height:500px"></model-viewer></td>
+               <td><model-viewer alt="" src="./static/images/nefertiti.glb" shadow-intensity="1" orientation="0deg 0 110deg" camera-orbit="0 0 7m"camera-controls touch-action="pan-z" style="width:100%;height:500px"></model-viewer></td>
+               <td><model-viewer alt="" src="./static/images/spot.glb" shadow-intensity="1" orientation="90deg 0 -30deg" camera-orbit="0 0 7m" camera-controls touch-action="pan-z" style="width:100%;height:500px"></model-viewer></td>
+            </tr>
+         </table>
+          <!-- <div class="float-parent-element">
+            <div class="float-child-element">
+              <div class="red"><model-viewer alt="" src="./static/images/localweighted.glb" shadow-intensity="1" orientation="90deg 0 0" camera-controls touch-action="pan-z" style="width:50%;height:500px"></model-viewer></div>
+            </div>
+            <div class="float-child-element">
+              <div class="yellow"><model-viewer alt="" src="./static/images/localweighted.glb" shadow-intensity="1" orientation="90deg 0 0" camera-controls touch-action="pan-z" style="width:50%;height:500px"></model-viewer></div>
+            </div>
+          </div> -->
+              
+         
+              
+           
+            
+         
+        
+        <br/>
+        <!--/Geometry-->
+
 
         <!-- PDE. -->
         <h3 class="title is-4">Self-Tuning PDE Solver</h3>
