@@ -164,10 +164,13 @@
         <h3 class="title is-4">Interpolatory Shape Reconstruction</h3>
         <div class="content has-text-justified">
           <b>Exact Normal Constraints</b>
-          <p>
+          <!-- <p>
             CNF can be used to produces plausible implicit surfaces from point clouds, with the advantage of not depending on manufactured
             offset points to ensure the existence of a non-trivial implicit surface. As the surface is parameterized by a neural field, it can be
             further traiend to satisfy addition constraints, like conforming to the Eikonal equation.
+          </p> -->
+          <p>
+            CNF can produce plausible implicit surfaces from point clouds by strictly interpolating the point sets and their normals (hard constraints), while also incorporating optimization processes (soft constraints) to ensure conformity with the Eikonal equation.
           </p>
         </div>
           <div class="column has-text-centered">
@@ -179,9 +182,12 @@
           <b>Large-scale Constraints</b>
           <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
           <br>
-          Central to our approach is the construction and inversion of a linear system, the size of which grows quadratically with the number of constraint points.
+          <!-- Central to our approach is the construction and inversion of a linear system, the size of which grows quadratically with the number of constraint points.
           We demonstrate that our approach can be scaled to larger problems by limiting the <i>support</i> of each constraint point to a local region, thus making the linear system sparse; this allows us to evaluate the field 
-          for large number of constraints, which we demonstrate by reconstruction of points clouds with 10k points.
+          for large number of constraints, which we demonstrate by reconstruction of points clouds with 10k points. -->
+          <p>
+            CNF can be scaled to accommodate a large number of constraints. For example, it can be used to reconstruct surfaces from point clouds consisting of 10k points.
+          </p>
           <table style="width: 100%", border="0" cellpadding="0" cellspacing="0">
             <tr>
                <td><model-viewer alt="" src="./static/images/max.glb" shadow-intensity="1" orientation="90deg 0 290deg" disable-zoom camera-controls touch-action="pan-z" style="width:100%;height:500px"></model-viewer></td>
